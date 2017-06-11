@@ -11,7 +11,11 @@ class BudgetsController < ApplicationController
 
 
   def create
-
+      budget = Budget.new(
+                          min: params[:min],
+                          max: params[:max]
+                          )
+      budget.save
   end
 
 
