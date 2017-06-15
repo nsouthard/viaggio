@@ -1,0 +1,65 @@
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_profile">
+        <h1>Sign Up</h1>
+        <%= form_tag "/users/#{current_user.id}", method: :patch do  %>
+          <div class="form-group">
+            <%= label_tag :first_name %>
+            <%= text_field_tag :first_name, nil, class: "form-control", value: @user.first_name %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :last_name %>
+            <%= text_field_tag :last_name, nil, class: "form-control", value: @user.last_name %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :address_1 %>
+            <%= text_field_tag :address_1, nil, class: "form-control", value: @user.address_1 %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :address_2 %>
+            <%= text_field_tag :address_2, nil, class: "form-control", value: @user.address_2 %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :city %>
+            <%= text_field_tag :city, nil, class: "form-control", value: @user.city %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :state %>
+            <%= text_field_tag :state, nil, class: "form-control", value: @user.state %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :zip_code %>
+            <%= text_field_tag :zip_code, nil, class: "form-control", value: @user.zip_code %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :country %>
+            <%= text_field_tag :country, nil, class: "form-control", value: @user.country %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :gender %>
+            <%= text_field_tag :gender, nil, class: "form-control", value: @user.gender %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :birthdate %>
+            <%= text_field_tag :birthdate, nil, class: "form-control", value: @user.birthdate %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, nil, class: "form-control", value: @user.email %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :password %>
+            <%= password_field_tag :password, nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :password_confirmation %>
+            <%= password_field_tag :password_confirmation, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
