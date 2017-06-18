@@ -6,7 +6,7 @@ class BudgetsController < ApplicationController
 
 
   def new
-
+    @budget = Budget.new
   end
 
 
@@ -25,12 +25,19 @@ class BudgetsController < ApplicationController
 
 
   def edit
-
+    @budget = Budget.find_by(user_id: params[:id])
   end
 
-
   def update
-
+    budget = Budget.find_by(user_id: params[:id])
+    budget.assign_attributes(
+                          min: params[:min],
+                          max: params[:max]
+                          )
+  
+    budget.save
+    flash[:success] = "Budget Updated"
+    redirect_to "/users/#{user.id}"
   end
 
 

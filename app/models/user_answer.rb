@@ -1,4 +1,5 @@
 class UserAnswer < ApplicationRecord
   belongs_to :user
-  has_many: :questions, through: :user_answers
+  belongs_to :answer
+  has_many :questions, through: :answer
 end

@@ -1,0 +1,26 @@
+
+<div class="divider">
+<% if current_user %>
+  <button type="button" class="btn btn-warning" onclick="window.location.href='/users/<%= current_user.id %>/'">Viaggio</button>
+  <button type="button" class="btn btn-warning" onclick="window.location.href='/logout'">Log Out</button>
+<% else %>
+  <a href="/signup">Sign Up</a>
+  <a href="/login">Log In</a>
+<% end %>
+</div class="divider">
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_location_preference">
+        <h1>Location Preferences</h1>
+        <%= form_tag "/locations/#{current_user.id}", method: :patch do  %>
+          <div class="form-group">
+            <%= label_tag :name %>
+            <%= text_field_tag :name, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Update Location Preferences", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

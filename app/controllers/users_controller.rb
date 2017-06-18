@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-
+    @users = User.all
   end
 
   def new
-
+    
   end
 
 
@@ -18,16 +18,36 @@ class UsersController < ApplicationController
                     password_confirmation: params[:password_confirmation]
                     )
     if user.save
+      budget = Budget.create(user_id: user.id)
+      availability = Availability.create!(user_id: user.id)
+      # user_answer = UserAnswer.create!(user_id: user.id)
+      # location_preference = LocationPreference.create!(user_id: user.id)
+                          
       flash[:success] = "Your account has successfully been created!"
-      redirect_to "/"
+      session[:user_id] = user.id
+      redirect_to "/users/#{user.id}"
     else
+      p "qqqqqqqq user"
+      p user.errors
       flash[:warning] = "An error occurred while your account was being created"
       redirect_to "/users/#{user.id}"
     end
+
+    # @user = User.create(user_params)
+
+    # respond_to do |format|
+    #   if @user.save
+    #     format.html {redirect_to @user, notice: 'Post was successfully created.'}
+    #     format.json { render :show, status: :created, location: @user }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @user.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def show
-
+    @user = User.find_by(id: session[:user_id])
   end
 
    def edit
@@ -56,5 +76,18 @@ class UsersController < ApplicationController
       flash[:success] = "Profile Updated"
       redirect_to "/users/#{user.id}"
     end
+
+    # private
+
+    # Use strong_parameters for attribute whitelisting
+    # Be sure to update your create() and update() controller methods.
+
+    # def set_user
+    #   @user = User.find(params[:id])
+    # end
+
+    # def user_params
+    #   params.require(:post).permit(:image)
+    # end
   
 end
