@@ -1,7 +1,7 @@
 class BudgetsController < ApplicationController
 
   def index
-
+    @budget = Budget.all
   end
 
 
@@ -37,7 +37,7 @@ class BudgetsController < ApplicationController
   
     budget.save
     flash[:success] = "Budget Updated"
-    redirect_to "/users/#{user.id}"
+    redirect_to "/users/#{current_user.id}"
   end
 
 

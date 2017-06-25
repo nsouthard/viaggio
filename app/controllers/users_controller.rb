@@ -20,15 +20,17 @@ class UsersController < ApplicationController
     if user.save
       budget = Budget.create(user_id: user.id)
       availability = Availability.create!(user_id: user.id)
+      location = Location.create!()
+        if location.save
+          location_preference = LocationPreference.create!(user_id: user.id, location_id: location.id)
+        end
+
       # user_answer = UserAnswer.create!(user_id: user.id)
-      # location_preference = LocationPreference.create!(user_id: user.id)
                           
       flash[:success] = "Your account has successfully been created!"
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      p "qqqqqqqq user"
-      p user.errors
       flash[:warning] = "An error occurred while your account was being created"
       redirect_to "/users/#{user.id}"
     end
@@ -48,6 +50,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: session[:user_id])
+    @budgets = @user.budgets
+    @location_preferences
   end
 
    def edit

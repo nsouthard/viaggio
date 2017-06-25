@@ -2,11 +2,23 @@
 <div class="divider">
 <% if current_user %>
   <button type="button" class="btn btn-warning" onclick="window.location.href='/users/<%= current_user.id %>/'">Viaggio</button>
-  <button type="button" class="btn btn-warning" onclick="window.location.href='/logout'">Log Out</button>
 <% else %>
   <a href="/signup">Sign Up</a>
   <a href="/login">Log In</a>
 <% end %>
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    <h4>Welcome <%= current_user.first_name %></h4> </a>
+    <ul class="dropdown-menu">
+      <li><a href="/availabilities/<%= current_user.id %>/edit">Availability</a></li>
+      <li><a href="/location_preferences/<%= current_user.id %>/edit">Budget</a></li>
+      <li><a href="/locations/<%= current_user.id %>/edit">Destinations</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </li>
+</ul>
 </div class="divider">
 
 
@@ -17,26 +29,6 @@
         <h1>Profile</h1>
         <%= form_tag "/users/#{current_user.id}", method: :patch do  %>
 
-        <div class="form-group">
-            <%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-              <% if @user.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-                <ul>
-                  <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-            <div class="field">
-              <%= f.label "Profile Picture" %><br>
-              <%= f.file_field :image %>
-            </div>
-            <% end %>
-          </div>
   
           <div class="form-group">
             <%= label_tag :first_name %>

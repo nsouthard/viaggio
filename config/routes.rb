@@ -38,7 +38,11 @@ delete '/locations/:id' => 'locations#destroy'
 
 #Location_Preferences Routes
 get '/location_preferences' => 'location_preferences#index'
+get '/location_preferences/new' => 'location_preferences#new'
 post '/location_preferences' => 'location_preferences#create'
+get '/location_preferences' => 'location_preferences#show'
+get '/location_preferences/:id/edit' => 'location_preferences#edit'
+patch '/location_preferences/:id' => 'location_preferences#update'
 delete '/location_preferences/:id' => 'location_preferences#destroy'
 
 #Matches
