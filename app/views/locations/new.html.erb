@@ -1,0 +1,18 @@
+<button type="button" class="btn btn-warning" onclick="window.location.href='/users/<%= current_user.id %>/'">Viaggio</button>
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_profile">
+        <h1>Destination</h1>
+        <%= form_tag '/locations', method: :post do  %>
+          <div class="form-group">
+            <%= label_tag :Enter_Location %>
+            <%= text_field_tag :name, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
