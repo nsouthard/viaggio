@@ -32,6 +32,7 @@ class LocationsController < ApplicationController
 
     def edit
       @location = Location.find_by(params[:location_id])
+      @location_preferences = current_user.location_preferences
     end
 
     def update

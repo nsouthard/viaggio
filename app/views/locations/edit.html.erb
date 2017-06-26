@@ -40,3 +40,56 @@
     </div>
   </div>
 </section>
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_budget">
+        <h1>Travel Budget</h1>
+        <%= form_tag "/budgets/#{current_user.id}", method: :patch do  %>
+          <div class="form-group">
+            <%= label_tag :min %>
+            <%= text_field_tag :min, nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :max %>
+            <%= text_field_tag :max, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Update Budget", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_availability">
+        <h1>Travel Availability</h1>
+        <%= form_tag "/availabilities/#{current_user.id}", method: :patch do  %>
+          <div class="form-group">
+            <%= label_tag :start_date %>
+            <%= text_field_tag :start_date, nil, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :end_date %>
+            <%= text_field_tag :end_date, nil, class: "form-control" %>
+          </div>
+          <%= submit_tag "Update Availability", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="delete_trip">
+        <button type="button" class="btn btn-warning"><%= link_to "Delete Trip", "/locations/#{@location.id}", method: :delete %></button>
+        </div>
+    </div>
+  </div>
+</section>

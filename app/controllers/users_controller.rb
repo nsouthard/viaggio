@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: session[:user_id])
     @budgets = @user.budgets
-    @location_preferences
+    @location_preferences = current_user.location_preferences
   end
 
    def edit
