@@ -42,7 +42,10 @@ class LocationPreferencesController < ApplicationController
 
 
   def destroy
-
+    location_preference = LocationPreference.find_by(params[:id])
+    location_preference.destroy
+    flash[:warning] = "Trip Deleted"
+    redirect_to "/users/<%= current_user.id %>/"
   end
   
 end

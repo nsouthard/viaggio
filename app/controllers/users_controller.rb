@@ -93,5 +93,12 @@ class UsersController < ApplicationController
     # def user_params
     #   params.require(:post).permit(:image)
     # end
+
+    def destroy
+      user = User.find_by(params[:id])
+      user.destroy
+      flash[:warning] = "Profile Deleted"
+      redirect_to "/"
+    end
   
 end

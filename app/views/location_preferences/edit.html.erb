@@ -25,7 +25,7 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="user_budget">
         <h1>Travel Budget</h1>
-        <%= form_tag "/location_preferences/#{current_user.id}", method: :patch do  %>
+        <%= form_tag "/location_preferences/#{location_preferences.id}", method: :patch do  %>
           <div class="form-group">
             <%= label_tag :min %>
             <%= text_field_tag :min, nil, class: "form-control" %>

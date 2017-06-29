@@ -42,7 +42,10 @@ class BudgetsController < ApplicationController
 
 
   def destroy
-
+    budget = Budget.find_by(params[:id])
+    budget.destroy
+    flash[:warning] = "Budget Deleted"
+    redirect_to "/users/<%= current_user.id %>/"
   end
   
 end

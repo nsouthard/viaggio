@@ -29,10 +29,10 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="user_location_preference">
         <h1>Location Preferences</h1>
-        <%= form_tag "/location_preferences", method: :patch do  %>
+        <%= form_tag "/locations/#{@location.id}", method: :patch do  %>
           <div class="form-group">
             <%= label_tag :name %>
-            <%= text_field_tag :name, nil, class: "form-control" %>
+            <%= text_field_tag :name, nil, class: "form-control", value: @location.name %>
           </div>
            <%= submit_tag "Update Location Preferences", class: "btn btn-primary" %>
         <% end %>
@@ -44,9 +44,9 @@
 <section>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="user_budget">
+      <div class="location_budget">
         <h1>Travel Budget</h1>
-        <%= form_tag "/budgets/#{current_user.id}", method: :patch do  %>
+        <%= form_tag "/location_preferences/#{@location_preferences.id}", method: :patch do  %>
           <div class="form-group">
             <%= label_tag :min %>
             <%= text_field_tag :min, nil, class: "form-control" %>
@@ -88,7 +88,7 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="delete_trip">
-        <button type="button" class="btn btn-warning"><%= link_to "Delete Trip", "/locations/#{@location.id}", method: :delete %></button>
+        <button type="button" class="btn btn-warning"><%= link_to "Delete Trip", "/locations", method: :delete %></button>
         </div>
     </div>
   </div>

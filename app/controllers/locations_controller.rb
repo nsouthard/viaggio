@@ -31,27 +31,30 @@ class LocationsController < ApplicationController
 
 
     def edit
-      @location = Location.find_by(params[:location_id])
-      @location_preferences = current_user.location_preferences
+      @location = Location.find(params[:id])
+      @location_preferences = LocationPreference.find_by(location_id: params[:id], user_id: current_user.id)
     end
 
     def update
-      location = Location.find_by(params[:location_id])
-      location.assign_attributes(
+      @location = Location.find_by(params[:id])
+      @location.assign_attributes(
                             name: params[:name],
                             min: params[:min],
                             max: params[:max]
                             )
     
-      location.save
+      @location.save
       flash[:success] = "Location Updated"
-      redirect_to "/location_preferences/"
+      redirect_to "/locations/@location/edit/"
     end
 
 
 
   def destroy
-
+    @location = Location.find_by(params[:id])
+    @location.destroy
+    flash[:warning] = "Trip Deleted"
+    redirect_to "/users/<%= current_user.id %>/"
   end
   
 end
