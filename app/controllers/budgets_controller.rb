@@ -30,7 +30,7 @@ class BudgetsController < ApplicationController
 
   def update
     budget = Budget.find_by(user_id: params[:id])
-    budget.assign_attributes(
+    budget.update(
                           min: params[:min],
                           max: params[:max]
                           )

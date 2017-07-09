@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
     def update
       user = User.find(params[:id])
-      user.assign_attributes(
+      user.update(
                             first_name: params[:first_name],
                             last_name: params[:last_name],
                             address_1: params[:address_1],

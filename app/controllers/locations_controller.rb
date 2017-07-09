@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
 
   def index
-
+    
   end
 
 
@@ -20,13 +20,14 @@ class LocationsController < ApplicationController
         location.save
         if location.save
           location_preference = LocationPreference.create!(user_id: current_user.id, location_id: location.id)
-          redirect_to "/location_preferences/"
+          user = User.find_by(params[:id])
+          redirect_to "/users/#{user.id}"
         end
     end
 
 
     def show
-
+     
     end
 
 
@@ -37,7 +38,7 @@ class LocationsController < ApplicationController
 
     def update
       @location = Location.find_by(params[:id])
-      @location.assign_attributes(
+      @location.update(
                             name: params[:name],
                             min: params[:min],
                             max: params[:max]
@@ -51,7 +52,7 @@ class LocationsController < ApplicationController
 
 
   def destroy
-    @location = Location.find_by(params[:id])
+    @location = Location.find(params[:id])
     @location.destroy
     flash[:warning] = "Trip Deleted"
     redirect_to "/users/<%= current_user.id %>/"

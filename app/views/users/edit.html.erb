@@ -11,9 +11,6 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
     <h4>Welcome <%= current_user.first_name %></h4> </a>
     <ul class="dropdown-menu">
-      <li><a href="/availabilities/<%= current_user.id %>/edit">Availability</a></li>
-      <li><a href="/location_preferences/<%= current_user.id %>/edit">Budget</a></li>
-      <li><a href="/locations/<%= current_user.id %>/edit">Destinations</a></li>
       <li role="separator" class="divider"></li>
       <li><a href="/logout">Log Out</a></li>
     </ul>

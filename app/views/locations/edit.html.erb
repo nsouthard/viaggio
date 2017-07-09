@@ -37,6 +37,7 @@
       </div>
     </div>
   </div>
+  
 </section>
 
 <section>
@@ -87,6 +88,9 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="delete_trip">
         <button type="button" class="btn btn-warning"><%= link_to "Delete Trip", "/locations", method: :delete %></button>
+        </div>
+        <div class="col-md-6">
+              <%= link_to "Delete Trip", "/locations/#{@location}", {method: :delete, class: "btn btn-danger" }%>
         </div>
     </div>
   </div>

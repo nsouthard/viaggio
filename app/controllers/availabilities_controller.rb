@@ -30,7 +30,7 @@ class AvailabilitiesController < ApplicationController
 
   def update
     availability = Availability.find_by(params[:user_id])
-    availability.assign_attributes(
+    availability.update(
                           start_date: params[:start_date],
                           end_date: params[:end_date]
                           )

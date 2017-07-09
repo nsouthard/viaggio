@@ -30,8 +30,7 @@ class LocationPreferencesController < ApplicationController
 
   def update
     location_preference = LocationPreference.find_by(location_id: params[:id])
-    p location_preference
-    location_preference.assign_attributes(
+    location_preference.update(
                           min_budget: params[:min_budget],
                           max_budget: params[:max_budget]
                           )
