@@ -42,378 +42,16 @@
 
 </head>
 
+
 <body class="changeHeader">
 
 
-<%- yield %>
-
-
-  <div class="main-wrapper">
-
-    <!-- HEADER -->
-    <header>
-      <nav class="navbar navbar-default navbar-main navbar-fixed-top" role="navigation">
-        <div class="container">
-
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"></a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown megaDropMenu">
-                <a href="index.html">Viaggio</a>
-              </li>
-              <li class="dropdown megaDropMenu">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">tour packages</a>
-                <ul class="row dropdown-menu">
-                  <li class="col-sm-3 col-xs-12">
-                    <ul class="list-unstyled">
-                      <li>Tour Packages Grid View</li>
-                      <li><a href="packages-grid-left-sidebar.html">Packages Sidebar Left</a></li>
-                      <li><a href="packages-grid-right-sidebar.html">Packages Sidebar Right</a></li>
-                      <li><a href="packages-grid.html">Packages 3 Columns</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-sm-3 col-xs-12">
-                    <ul class="list-unstyled">
-                      <li>Tour Packages List View</li>
-                      <li><a href="packages-list-left-sidebar.html">Packages Sidebar Left</a></li>
-                      <li><a href="packages-list-right-sidebar.html">Packages Sidebar Right</a></li>
-                      <li><a href="packages-list.html">Packages List</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-sm-3 col-xs-12">
-                    <ul class="list-unstyled">
-                      <li>Single Package</li>
-                      <li><a href="single-package-left-sidebar.html">Package Sidebar Left</a></li>
-                      <li><a href="single-package-right-sidebar.html">Package Sidebar Right</a></li>
-                      <li><a href="single-package-fullwidth.html">Package Fullwidth</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-sm-3 col-xs-12">
-                    <ul class="list-unstyled">
-                      <li>Booking Steps</li>
-                      <li><a href="booking-1.html">Step 1 - Personal Info</a></li>
-                      <li><a href="booking-2.html">Step 2 - Payment Info</a></li>
-                      <li><a href="booking-3.html">Step 3 - Confirmation</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown singleDrop">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations</a>
-                <ul class="dropdown-menu dropdown-menu-left">
-                  <li><a href="destination-cities.html">Destination Cities</a></li>
-                  <li><a href="destination-single-city.html">Single Destination</a></li>
-                </ul>
-              </li>
-              <li class="dropdown singleDrop">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAGES</a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li><a href="about-us.html">About Us</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li class="dropdown dropdown-submenu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Gallery <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="gallery-grid.html">Gallery Grid</a></li>
-                      <li><a href="gallery-masonry.html">Gallery Masonry</a></li>
-                      <li><a href="gallery-photo-slider.html">Photo Slider</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="404.html">404 Not Found</a></li>
-                  <li><a href="coming-soon.html">Coming Soon</a></li>
-                </ul>
-              </li>
-              <li class="dropdown singleDrop">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown dropdown-submenu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Blog Grid View <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="blog-grid-three-col.html">Blog Grid 3 Col</a></li>
-                      <li><a href="blog-grid-two-col.html">Blog Grid 2 Col</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown dropdown-submenu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Blog List View <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
-                      <li><a href="blog-list-left-sidebar.html">blog-list-left-sidebar.html</a></li>
-                      <li><a href="blog-list-fullwidth.html">Blog List Fullwidth</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown dropdown-submenu">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Single Blog Post <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="blog-single-right-sidebar.html">Right Sidebar</a></li>
-                      <li><a href="blog-list-left-sidebar.html">Left Sidebar</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown singleDrop">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">shortcodes</a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li><a href="accordion-and-toggles.html">Accordions &amp; Toggles</a></li>
-                  <li><a href="tabs-and-dropdown.html">Tabs &amp; Dropdowns</a></li>
-                  <li><a href="pricing-table.html">Pricing Tables</a></li>
-                </ul>
-              </li>
-              <li class="dropdown searchBox">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></span></a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li>
-                    <span class="input-group">
-                      <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon2">
-                      <span class="input-group-addon" id="basic-addon2">Search</span>
-                    </span>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </nav>
-    </header>
-
-    <!-- BANNER -->
-    <section class="bannercontainer/">
-      <div class="fullscreenbanner-container">
-        <div class="fullscreenbanner">
-          <ul>
-            <li data-transition="parallaxvertical" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
-              <img src="/img/home/slider/slider-01.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-              <div class="slider-caption container">
-                <div class="tp-caption rs-caption-1 sft start"
-                  data-hoffset="0"
-                  data-y="270"
-                  data-speed="800"
-                  data-start="1000"
-                  data-easing="Back.easeInOut"
-                  data-endspeed="300">
-                  Discover The Most Amazing
-                  <span>People & Places</span>
-                </div>
-                <div class="tp-caption rs-caption-2 sft"
-                  data-hoffset="0"
-                  data-y="400"
-                  data-speed="1000"
-                  data-start="1500"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex consequat.
-                </div>
-                <div class="tp-caption rs-caption-3 sft"
-                  data-hoffset="0"
-                  data-y="485"
-                  data-speed="800"
-                  data-start="2000"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <span class="page-scroll"><a target="_blank" href="http://goo.gl/lXpsqr" class="btn buttonCustomPrimary">Buy Now</a></span>
-                </div>
-              </div>
-            </li>
-            <li data-transition="parallaxvertical" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-              <img src="/img/home/slider/slider-02.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-              <div class="slider-caption container">
-                <div class="tp-caption rs-caption-1 sft start text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="270"
-                  data-speed="800"
-                  data-start="1000"
-                  data-easing="Back.easeInOut"
-                  data-endspeed="300">
-                  Crossing The Limits
-                  <span>With New Friends</span>
-                </div>
-                <div class="tp-caption rs-caption-2 sft text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="400"
-                  data-speed="1000"
-                  data-start="1500"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  Maecenas nec sodales justo. Vivamus auctor pulvinar mattis. Ut at elementum nunc. Quisque condimentum ligula ante, non luctus enim pulvinar sed. Fusce quis congue odio.
-                </div>
-                <div class="tp-caption rs-caption-3 sft text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="485"
-                  data-speed="800"
-                  data-start="2000"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <span class="page-scroll"><a target="_blank" href="http://goo.gl/lXpsqr" class="btn buttonCustomPrimary">Read More</a></span>
-                </div>
-              </div>
-            </li>
-            <li data-transition="parallaxvertical" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
-              <img src="/img/home/slider/slider-03.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-              <div class="slider-caption container">
-                <div class="tp-caption rs-caption-1 sft start"
-                  data-hoffset="0"
-                  data-y="270"
-                  data-speed="800"
-                  data-start="1000"
-                  data-easing="Back.easeInOut"
-                  data-endspeed="300">
-                  Enjoy Ultimate Freedom
-                  <span>Together With New Friends</span>
-                </div>
-                <div class="tp-caption rs-caption-2 sft"
-                  data-hoffset="0"
-                  data-y="400"
-                  data-speed="1000"
-                  data-start="1500"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <br>
-                  <br>
-                  Aenean congue nisi elit, vitae viverra leo luctus et. Donec interdum erat id mi scelerisque, vitae ullamcorper lorem gravida. Nunc sed maximus ante. Nulla dictum turpis vitae vehicula auctor.
-                </div>
-                <div class="tp-caption rs-caption-3 sft"
-                  data-hoffset="0"
-                  data-y="485"
-                  data-speed="800"
-                  data-start="2000"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <span class="page-scroll"><a target="_blank" href="http://goo.gl/lXpsqr" class="btn buttonCustomPrimary">Buy Now</a></span>
-                </div>
-              </div>
-            </li>
-            <li data-transition="parallaxvertical" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
-              <img src="/img/home/slider/slider-04.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-              <div class="slider-caption container">
-                <div class="tp-caption rs-caption-1 sft start text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="270"
-                  data-speed="800"
-                  data-start="1000"
-                  data-easing="Back.easeInOut"
-                  data-endspeed="300">
-                  Go Where You Wanna Go
-                  <span>With Who You Want To Go With</span>
-                </div>
-                <div class="tp-caption rs-caption-2 sft text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="400"
-                  data-speed="1000"
-                  data-start="1500"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <br>
-                  <br>
-                  Maecenas et leo nec nunc rutrum tempor. Mauris pharetra porttitor odio eget convallis. Praesent facilisis mattis pretium. Aliquam sagittis efficitur risus, interdum euismod urna. Pellentesque vel augue augue.
-                </div>
-                <div class="tp-caption rs-caption-3 sft text-center"
-                  data-hoffset="0"
-                  data-x="center"
-                  data-y="485"
-                  data-speed="800"
-                  data-start="2000"
-                  data-easing="Power4.easeOut"
-                  data-endspeed="300"
-                  data-endeasing="Power1.easeIn"
-                  data-captionhidden="off">
-                  <span class="page-scroll"><a target="_blank" href="http://goo.gl/lXpsqr" class="btn buttonCustomPrimary">View Delails</a></span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEARCH TOUR -->
-    <section class="darkSection">
-      <div class="container">
-        <div class="row gridResize">
-          <div class="col-sm-3 col-xs-12">
-            <div class="sectionTitleDouble">
-              <p>Search</p>
-              <h2>your <span>tours</span></h2>
-            </div>
-          </div>
-          <div class="col-sm-7 col-xs-12">
-            <div class="row">
-              <div class="col-sm-3 col-xs-12">
-                <div class="searchTour">
-                  <select name="guiest_id2" id="guiest_id2" class="select-drop">
-                    <option value="0">Destinations</option>
-                    <option value="1">USA</option>
-                    <option value="2">UK</option>
-                    <option value="3">Canada</option>            
-                  </select>
-                </div>
-              </div>
-              <div class="col-sm-3 col-xs-12">
-                <div class="input-group date ed-datepicker" data-provide="datepicker">
-                  <input type="text" class="form-control" placeholder="MM/DD/YYYY">
-                  <div class="input-group-addon">
-                      <span class="fa fa-calendar"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-xs-12">
-                <div class="input-group date ed-datepicker" data-provide="datepicker">
-                  <input type="text" class="form-control" placeholder="MM/DD/YYYY">
-                  <div class="input-group-addon">
-                      <span class="fa fa-calendar"></span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-xs-12">
-                <div class="searchTour">
-                  <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">$1000 - $2000</option>
-                    <option value="1">$1400 - $2000</option>
-                    <option value="2">$1600 - $2000</option>
-                    <option value="3">$1800 - $2000</option>            
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-2 col-xs-12">
-            <a href="#" class="btn btn-block buttonCustomPrimary">Search</a>
-          </div>
-        </div>
-      </div>
-    </section>
-        <%= yield %>
+        
+    <%= yield %>
+    <%- yield %>
 
     <!-- TOP DEALS -->
-    <section class="mainContentSection packagesSection">
+    <!-- <section class="mainContentSection packagesSection">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -549,9 +187,9 @@
         </div>
       </div>
     </section>
-
+ -->
     <!-- PROMOTION PARALLAX -->
-    <section class="promotionWrapper">
+    <!-- <section class="promotionWrapper">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
@@ -576,15 +214,15 @@
         </div>
       </div>
     </section>
-
+ -->
     <!-- DESTINATIONS -->
     <section class="whiteSection">
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
             <div class="sectionTitle">
-              <h2><span>Our Destinations</span></h2>
-              <p>Nullam vitae risus commodo arcu tincidunt ultricies</p>
+              <h2><span> Let Us Do the Research for you</span></h2>
+              <p>For the explorer who is still exploring</p>
             </div>
           </div>
         </div>
@@ -600,33 +238,33 @@
                 <div class="clearfix">
                   <ul class="list-unstyled">
                     <li><i class="fa fa-minus" aria-hidden="true"></i>Asia</li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Aenean</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Etiam</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Donec</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>China</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>India</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Japan</a></li>
                   </ul>
                   <ul class="list-unstyled">
                     <li><i class="fa fa-minus" aria-hidden="true"></i>Europe</li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Maecenas</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Cras Sagittis</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Vestibulum</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Italy</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>France</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Greece</a></li>
                   </ul>
                   <ul class="list-unstyled">
                     <li><i class="fa fa-minus" aria-hidden="true"></i>America</li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Morbi Sed</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Pellentesque</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Proin</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Montreal</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Mexico City</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Rio de Janiero</a></li>
                   </ul>
                   <ul class="list-unstyled">
                     <li><i class="fa fa-minus" aria-hidden="true"></i>Africa</li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Duis Eu</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Morbi Nisl</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Curabitur</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Cairo</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Johannesburg</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Casablanca</a></li>
                   </ul>
                   <ul class="list-unstyled">
                     <li><i class="fa fa-minus" aria-hidden="true"></i>Australia</li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Vivamus</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Nibh Odio</a></li>
-                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Dictum</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Sydney</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Melbourne</a></li>
+                    <li><a href="destination-single-city.html"><i class="fa fa-square" aria-hidden="true"></i>Cairns</a></li>
                   </ul>
                 </div>
                 <div class="media-btn">
@@ -689,8 +327,8 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="sectionTitle">
-              <h2><span>Our Packages</span></h2>
-              <p>Ut facilisis facilisis metus quis semper</p>
+              <h2><span>Organized Trippin'</span></h2>
+              <p>For the explorer ready to motor but no time to start the engine!</p>
             </div>
           </div>
         </div>
@@ -832,18 +470,18 @@
           <div class="row">
             <div class="col-sm-3 col-xs-12">
               <div class="footerContent">
-                <a href="index.html" class="footer-logo"><img src="/img/logo-color-sm.png" alt="footer-logo"></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute </p>
+                <a href="index.html" class="footer-logo"><img src="/img/viaggio_compass_sm.jpg" alt="footer-logo"></a>
+                <p>VIAGGIO </p>
               </div>
             </div>
             <div class="col-sm-3 col-xs-12">
               <div class="footerContent">
                 <h5>Contact Us</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
+                <p>Our door is always open:</p>
                 <ul class="list-unstyled">
-                  <li><i class="fa fa-home" aria-hidden="true"></i>61 Park Street, Fifth Avenue, NY</li>
-                  <li><i class="fa fa-phone" aria-hidden="true"></i>[88] 657 524 332</li>
-                  <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailTo:info@star-travel.com">info@star-travel.com</a></li>
+                  <li><i class="fa fa-home" aria-hidden="true"></i>3216 N Halsted St., Ste. 3, Chicago, IL 60654</li>
+                  <li><i class="fa fa-phone" aria-hidden="true"></i>312-804-4190</li>
+                  <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailTo:info@star-travel.com">info@viaggio.com</a></li>
                 </ul>
               </div>
             </div>
@@ -875,7 +513,7 @@
             <div class="col-sm-3 col-xs-12">
               <div class="footerContent">
                 <h5>Newsletter</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do. </p>
+                <p>Stay in the loop with the group </p>
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon21">
                   <span class="input-group-addon" id="basic-addon21"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
@@ -905,7 +543,7 @@
             </div>
             <div class="col-sm-6 col-sm-pull-6 col-xs-12">
               <div class="copyRightText">
-                <p>Copyright © 2016. All Rights Reserved by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p>
+                <!-- <p>Copyright © 2016. All Rights Reserved by <a target="_blank" href="http://www.iamabdus.com/">Abdus</a>.</p> -->
               </div>
             </div>
           </div>

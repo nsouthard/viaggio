@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'bootstrap-sass'
 gem 'seed_dump'
+gem 'sprockets', '~> 3.5.2'
 gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 gem "therubyracer"

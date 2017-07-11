@@ -35,23 +35,13 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     end
 
-    # @user = User.create(user_params)
-
-    # respond_to do |format|
-    #   if @user.save
-    #     format.html {redirect_to @user, notice: 'Post was successfully created.'}
-    #     format.json { render :show, status: :created, location: @user }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @user.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def show
     @user = User.find_by(id: session[:user_id])
     @budgets = @user.budgets
-    @location_preferences = current_user.location_preferences
+    # @location_preferences = current_user.location_preferences
+    @locations = current_user.locations
   end
 
    def edit
@@ -81,18 +71,6 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     end
 
-    # private
-
-    # Use strong_parameters for attribute whitelisting
-    # Be sure to update your create() and update() controller methods.
-
-    # def set_user
-    #   @user = User.find(params[:id])
-    # end
-
-    # def user_params
-    #   params.require(:post).permit(:image)
-    # end
 
     def destroy
       user = User.find_by(params[:id])

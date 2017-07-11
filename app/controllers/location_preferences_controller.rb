@@ -25,25 +25,25 @@ class LocationPreferencesController < ApplicationController
 
 
   def edit
-    @location_preference = LocationPreference.find_by(user_id: params[:id])
+    location_preference = LocationPreference.find_by(user_id: params[:id])
   end
 
   def update
-    location_preference = LocationPreference.find_by(location_id: params[:id])
-    location_preference.update(
+    @location_preference = LocationPreference.find_by(id: params[:id])
+    @location_preference.assign_attributes(
                           min_budget: params[:min_budget],
                           max_budget: params[:max_budget]
                           )
   
-    location_preference.save
+    @location_preference.save
     flash[:success] = "Destination Updated"
     redirect_to "/users/#{current_user.id}"
   end
 
 
   def destroy
-    location_preference = LocationPreference.find_by(params[:id])
-    location_preference.destroy
+    location = Location.find_by(params[:id])
+    location.destroy
     flash[:warning] = "Trip Deleted"
     redirect_to "/users/<%= current_user.id %>/"
   end
