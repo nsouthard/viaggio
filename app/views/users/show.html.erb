@@ -58,6 +58,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<%= form_for @user, url: update_image_path, html: {multipart: true} do |f| %>
+  <%= label_tag "Update Profile Picture" %> <%= f.file_field :image %>
+  <%= submit_tag "Add Photo" %>
+<% end %>
+<%= image_tag @user.image.url(:large) %>
 
 
 

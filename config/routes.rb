@@ -28,6 +28,9 @@ get '/budgets/:id/edit' => 'budgets#edit'
 patch '/budgets/:id' => 'budgets#update'
 delete '/budgets/:id' => 'budgets#destroy'
 
+#Image Routes
+patch '/user/:id/images', to: 'images#update', as: :update_image
+
 #Location Routes
 get '/locations' => 'locations#index'
 get '/locations/new' => 'locations#new'
