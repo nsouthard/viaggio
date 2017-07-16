@@ -1,33 +1,72 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
 
-<div class="divider">
-<% if current_user %>
-  <button type="button" class="btn btn-warning" onclick="window.location.href='/users/<%= current_user.id %>/'">Viaggio</button>
-<% else %>
-  <a href="/signup">Sign Up</a>
-  <a href="/login">Log In</a>
-<% end %>
-<ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    <h4>Welcome <%= current_user.first_name %></h4> </a>
-    <ul class="dropdown-menu">
-      <li><a href="/users/<%= current_user.id %>/edit">Profile</a></li>
-      <li><a href="/budgets/<%= current_user.id %>/edit">Budget</a></li>
-      <li><a href="/locations/<%= current_user.id %>/edit">Destinations</a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="/logout">Log Out</a></li>
-    </ul>
-  </li>
-</ul>
-</div class="divider">
-
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/users/<%= current_user.id %>/">Viaggio</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Trips <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <% @locations.each do |location| %>
+               <li><a href="/locations/<%= location.id %>/edit"><%= location.name %></a></li>
+             <% end %>
+            <li><a href="/locations/new">Create New Trip</a></li>
+          </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Travel Blogs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://culinarybackstreets.com/" target="_blank">Culinary Backstreet</a></li>
+              <li><a href="https://www.lostwithpurpose.com/" target="_blank">Lost With Purpose</a></li>
+              <li><a href="http://ourwildabandon.com/" target="_blank">Meravigli</a></li>
+              <li><a href="http://ourwildabandon.com/" target="_blank">Our Wild Abandon</a></li>
+              <li><a href="http://roam-magazine.co/" target="_blank">Roam</a></li>
+              <li><a href="http://www.thisistheplaceiwastellingyouabout.com/" target="_blank">This Is The Place I Was Telling You About</a></li>
+            </ul>
+        <li><a href="#">Browse Matches</a></li>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <h4>Welcome <%= current_user.first_name %></h4> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <div class="round">
+              <%= image_tag @user.image.url(:med) %>
+            </div>
+            <li><a href="/users/<%= current_user.id %>/edit">Profile</a></li>
+            <li><a href="/availabilities">Travel Availability</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/logout">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <section>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="user_availability">
         <h1>Travel Availability</h1>
-        <%= form_tag "/availabilities/#{current_user.id}", method: :patch do  %>
+        <%= form_tag "/availabilities/#{@availability.id}", method: :patch do  %>
           <div class="form-group">
             <%= label_tag :start_date %>
             <%= text_field_tag :start_date, nil, class: "form-control" %>
@@ -42,3 +81,62 @@
     </div>
   </div>
 </section>
+
+
+<%= form_tag "/availabilities/#{@availability.id}", method: :patch do  %>
+  <section class="darkSection">
+    <div class="container">
+      <div class="row gridResize">
+        <div class="col-sm-3 col-xs-12">
+          <div class="sectionTitleDouble">
+            <p>Add</p>
+            <h2>your <span>dates</span></h2>
+          </div>
+        </div>
+        <div class="col-sm-7 col-xs-12">
+          <div class="row">
+            <div class="col-sm-3 col-xs-12">
+              <div class="searchTour">
+                
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="input-group date ed-datepicker" data-provide="datepicker">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                     <div class="form-group">
+                  <%= label_tag :start_date %>
+                  <%= text_field_tag :start_date, nil, class: "form-control" %>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="input-group date ed-datepicker" data-provide="datepicker">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                    <div class="form-group">
+                  <%= label_tag :end_date %>
+                  <%= text_field_tag :end_date, nil, class: "form-control" %>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="searchTour">
+            
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-12">
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+   
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+

@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
 
   def new
-    @location = Location.new
+    
   end
 
 
@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
         if location.save
           location_preference = LocationPreference.create!(user_id: current_user.id, location_id: location.id)
           user = User.find_by(params[:id])
-          redirect_to "/users/#{user.id}"
+          redirect_to "/locations/#{location.id}/edit"
         end
     end
 
@@ -34,6 +34,8 @@ class LocationsController < ApplicationController
     def edit
       @location = Location.find(params[:id])
       @location_preferences = LocationPreference.find_by(location_id: params[:id], user_id: current_user.id)
+      @user = User.find_by(id: session[:user_id])
+      @l_locations = current_user.locations
     end
 
     def update

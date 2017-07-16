@@ -11,6 +11,7 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
     <h4>Welcome <%= current_user.first_name %></h4> </a>
     <ul class="dropdown-menu">
+    <%= image_tag @user.image.url(:med) %>
       <li><a href="/users/<%= current_user.id %>/edit">Profile</a></li>
       <li><a href="/availabilities/<%= current_user.id %>/edit">Availability</a></li>
       <li><a href="/locations/<%= current_user.id %>/edit">Destinations</a></li>

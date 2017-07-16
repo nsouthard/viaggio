@@ -46,17 +46,19 @@ class AvailabilitiesController < ApplicationController
 
 
   def edit
-    @availability = Availability.find_by(params[:user_id])
+    @availability = Availability.find(params[:id])
+    @user = User.find_by(id: session[:user_id])
+    @locations = current_user.locations
   end
 
   def update
-    availability = Availability.find_by(user_id: params[:user_id])
-    availability.update(
+    @availability = Availability.find(params[:id])
+    @availability.update(
                           start_date: params[:start_date],
                           end_date: params[:end_date]
                           )
   
-    availability.save
+    @availability.save
     @user = User.find_by(id: session[:user_id])
     flash[:success] = "Availability Updated"
     redirect_to "/users/<%= current_user.id %>"

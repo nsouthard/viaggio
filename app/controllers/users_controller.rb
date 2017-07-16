@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    
+    @locations = current_user.locations
   end
 
 
@@ -42,10 +42,12 @@ class UsersController < ApplicationController
     @budgets = @user.budgets
     # @location_preferences = current_user.location_preferences
     @locations = current_user.locations
+    @u_locations = Location.all
   end
 
    def edit
      @user = User.find(params[:id])
+     @locations = current_user.locations
    end
 
     def update

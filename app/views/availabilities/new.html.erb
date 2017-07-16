@@ -9,12 +9,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Viaggio</a>
+      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="/users/<%= current_user.id %>/">Viaggio</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Trips <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -47,7 +48,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <h4>Welcome <%= current_user.first_name %></h4> <span class="caret"></span></a>
           <ul class="dropdown-menu">
+          <%= image_tag @user.image.url(:med) %>
             <li><a href="/users/<%= current_user.id %>/edit">Profile</a></li>
+            <li><a href="/availabilities">Travel Availability</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
@@ -57,14 +60,61 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+
 <%= form_tag '/availabilities', method: :post do  %>
-                <div class="form-group">
+  <section class="darkSection">
+    <div class="container">
+      <div class="row gridResize">
+        <div class="col-sm-3 col-xs-12">
+          <div class="sectionTitleDouble">
+            <p>Add</p>
+            <h2>your <span>dates</span></h2>
+          </div>
+        </div>
+        <div class="col-sm-7 col-xs-12">
+          <div class="row">
+            <div class="col-sm-3 col-xs-12">
+              <div class="searchTour">
+                
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="input-group date ed-datepicker" data-provide="datepicker">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                     <div class="form-group">
                   <%= label_tag :start_date %>
                   <%= text_field_tag :start_date, nil, class: "form-control" %>
                 </div>
-                <div class="form-group">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="input-group date ed-datepicker" data-provide="datepicker">
+                <input type="text" class="form-control" placeholder="YYYY/MM/DD">
+                <div class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                    <div class="form-group">
                   <%= label_tag :end_date %>
                   <%= text_field_tag :end_date, nil, class: "form-control" %>
                 </div>
-                <%= submit_tag "Submit", class: "btn btn-primary" %>
-              <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-12">
+              <div class="searchTour">
+            
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2 col-xs-12">
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+   
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

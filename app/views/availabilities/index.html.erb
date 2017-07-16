@@ -9,12 +9,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Viaggio</a>
+      
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li><a href="/users/<%= current_user.id %>/">Viaggio</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Trips <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -47,6 +48,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
           <h4>Welcome <%= current_user.first_name %></h4> <span class="caret"></span></a>
           <ul class="dropdown-menu">
+          <%= image_tag @user.image.url(:med) %>
             <li><a href="/users/<%= current_user.id %>/edit">Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/logout">Log Out</a></li>
@@ -61,12 +63,17 @@
 
 <h1>Tell us when you're free to roam...</h1>
 
-  <span class="page-scroll"><a href='/availabilities/new' class="btn buttonCustomPrimary">Add Freedom</a></span>
-
 <div class="well"> 
   <% @availabilities.each do |available| %>
-    <h2><%= available.start_date %></h2>
-    <h2><%= available.end_date %></h2>
+    <h2><a href="/availabilities/<%= available.id %>/edit"><%= "start date: " "#{available.start_date} " " end date: " "#{available.end_date}" %></h2>
   <% end %>
 </div>
 
+
+
+<section>
+  <div>
+  <br>
+    <span class="page-scroll"><a href='/availabilities/new' class="btn buttonCustomPrimary">Add Freedom</a></span>
+  </div>
+</section>
