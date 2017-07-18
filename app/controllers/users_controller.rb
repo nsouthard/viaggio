@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @locations = current_user.locations
+    
   end
 
 
@@ -42,7 +42,8 @@ class UsersController < ApplicationController
     @budgets = @user.budgets
     # @location_preferences = current_user.location_preferences
     @locations = current_user.locations
-    @u_locations = Location.all
+    @l_matches = @user.l_matches
+    @b_matches = @user.b_matches
   end
 
    def edit
@@ -63,6 +64,7 @@ class UsersController < ApplicationController
                             country: params[:country],
                             gender: params[:gender],
                             birthdate: params[:birthdate],
+                            bio: params[:bio],
                             email: params[:email],
                             password: params[:password],
                             password_confirmation: params[:password_confirmation]

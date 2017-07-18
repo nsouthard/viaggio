@@ -64,8 +64,12 @@
 
 
 
-<% @u_locations.map do |location| %>
- <li><a href="/locations/<%= location.id %>/edit"><%= location.users %></a></li>
+<% @l_matches.each do |match| %>
+  <li><%= image_tag match.image.url(:large) %> <%= match.bio %></li>
+    <li><%= match.first_name %> <%= match.last_name %></li>
+    <li><%= match.city %> , <%= match.state %></li>
+    <li><%= match.email %></li>
+    <br>
 <% end %>
 
 

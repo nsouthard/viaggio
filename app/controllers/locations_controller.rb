@@ -11,18 +11,16 @@ class LocationsController < ApplicationController
 
 
   def create
-        user = current_user.id
-        location = Location.new(
-                            name: params[:name],
-                            long: params[:long],
-                            lat: params[:lat]
-                            )
-        location.save
-        if location.save
-          location_preference = LocationPreference.create!(user_id: current_user.id, location_id: location.id)
-          user = User.find_by(params[:id])
-          redirect_to "/locations/#{location.id}/edit"
-        end
+        location = Location.find_or_create_by(
+                                              name: params[:name].titleize
+                                              )
+        location.update(
+                        long: params[:long],
+                        lat: params[:lat]
+                        )
+
+        location_preference = LocationPreference.create!(user_id: current_user.id, location_id: location.id)
+        redirect_to "/locations/#{location.id}/edit"
     end
 
 

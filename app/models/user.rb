@@ -15,6 +15,24 @@ class User < ApplicationRecord
     :content_type => { content_type: ["image/jpg", "image/png", "image/jpeg"]  }
  
 
+  def l_matches
+    users = locations.map { |location| location.users }.flatten.uniq
+    users.delete(self)
+    users
+  end
 
+   def b_matches
+    `array.map{|x| x[:user_id], x[:min_budget], x[:max_budget]}`
+    
+    users = location_preferences.map { |budget| budget.users }.flatten.uniq
+    users.delete(self)
+    users
+  end
+
+  def a_matches
+    users = availabilities.map { |availability| availability.users }.flatten.uniq
+    users.delete(self)
+    users
+  end
 
 end
