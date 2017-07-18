@@ -42,8 +42,7 @@ class UsersController < ApplicationController
     @budgets = @user.budgets
     # @location_preferences = current_user.location_preferences
     @locations = current_user.locations
-    @l_matches = @user.l_matches
-    @b_matches = @user.b_matches
+    @matches = @user.matches
   end
 
    def edit

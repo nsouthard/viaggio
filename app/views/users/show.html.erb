@@ -62,15 +62,27 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class="row">
+  <% @matches.each do |match| %>
+  <div class="col-sm-4 well">
+    
+      <%= image_tag match.image.url(:large) %>
+      <h3><%= match.first_name %> <%= match.last_name %></h3>
+      <h5><%= match.city %> , <%= match.state %></h5>
+      <h5><%= match.email %></h5>
+      <h4>Similar Locations</h4>
+      <ul>
+        <% @user.similar_locations(match).each do |location| %>
+          <li><%= location.name %></li>
+        <% end %>
+      </ul>
+      <h4>Similar Budget: <%= @user.similar_budget(match) %></h4>
+      <h4>Similar Availability: <%= @user.similar_availability(match) %></h4>
+  </div>
 
+  <% end %>
+</div>
 
-<% @l_matches.each do |match| %>
-  <li><%= image_tag match.image.url(:large) %> <%= match.bio %></li>
-    <li><%= match.first_name %> <%= match.last_name %></li>
-    <li><%= match.city %> , <%= match.state %></li>
-    <li><%= match.email %></li>
-    <br>
-<% end %>
 
 
 
